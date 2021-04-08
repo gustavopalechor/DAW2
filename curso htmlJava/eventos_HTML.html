@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Eventos html</title>
+
+	<script>
+	var imagen;
+		
+		function tipoFlor(argument) {
+			alert("Chiwu");
+		}
+
+		function manejaFlor(){
+			//document.getElementsByTagName('img')[0].onclick=tipoFlor();
+			imagen=document.getElementsByTagName('img')[0];
+			var parrafo=document.getElementsByTagName('p')[0];
+			parrafo.addEventListener("click", evento, false);
+			imagen.addEventListener("mouseover", crecer, false);
+			imagen.addEventListener("click", normal, true);
+		}
+
+		function crecer(){
+
+			imagen.width=225;
+			imagen.height=225;
+		}
+
+		function normal(){
+
+			alert ('imagen');
+		}
+		function evento(){
+			alert ('parrafo');
+		}
+
+		window.onload=manejaFlor;
+
+	</script>
+
+</head>
+<body>
+
+<p>
+	<img src="imagenes/chihuahua.jpg">
+</p>
+
+
+</body>
+</html>

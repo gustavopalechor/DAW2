@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Manejador de eventos con javaScript</title>
+	<script>
+		var imagen= new Array(3);
+		function tipoFlor(argument) {
+			alert("chihuahua");
+			
+		}
+
+		function daTipoFlor(argument) {
+			for(var i=0; i<4; i++){
+			imagen[i]=document.getElementsByTagName("img")[i];
+		}
+			imagen[0].addEventListener("mouseover",function(){imagen[0].width=225; imagen[0].height=225;}, false);
+			imagen[0].addEventListener("mouseout",function(){imagen[0].width=100; imagen[0].height=100;}, false);
+			imagen[0].addEventListener("click",tipoFlor, false);
+
+			imagen[1].addEventListener("mouseover",function(){imagen[1].width=225; imagen[1].height=225;}, false);
+			imagen[1].addEventListener("mouseout",function(){imagen[1].width=100; imagen[1].height=100;}, false);
+			imagen[1].addEventListener("click",tipoFlor, false);
+
+			imagen[2].addEventListener("mouseover",function(){imagen[2].width=225; imagen[2].height=225;}, false);
+			imagen[2].addEventListener("mouseout",function(){imagen[2].width=100; imagen[2].height=100;}, false);
+			imagen[2].addEventListener("click",tipoFlor, false);
+
+			imagen[3].addEventListener("mouseover",function(){imagen[3].width=225; imagen[3].height=225;}, false);
+			imagen[3].addEventListener("mouseout",function(){imagen[3].width=100; imagen[3].height=100;}, false);
+			imagen[3].addEventListener("click",tipoFlor, false);
+
+		}
+		/*function crecer() {
+
+			imagen.width=225;
+			imagen.height=225;
+		}
+		function menguar() {
+			imagen.width=500;
+			imagen.height=500;
+		}
+		window.onload=daTipoFlor;
+*/
+		window.addEventListener("load", daTipoFlor, false);
+	</script>
+</head>
+<body>
+
+	<p>
+		<img src="imagenes/1.jpg">
+		<img src="imagenes/2.jpg">
+		<img src="imagenes/3.jpg">
+		<img src="imagenes/4.jpg">
+
+		
+	</p>
+</body>
+</html>

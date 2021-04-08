@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<style>
+	table{
+		text-align: center;
+		background-color: #F96;
+		width: 25%;
+		margin: auto;
+		border: 2px #F30 dashed;
+	}
+
+	td{
+		padding: 15px;
+	}
+
+</style>
+<script>
+	var edad;
+
+	function comenzar(){
+		edad=document.getElementById('miedad');
+		edad.addEventListener("change", cambia_rango, false);
+
+		document.datos_usuario.addEventListener("invalid", validar, true);
+		document.getElementById("Enviar").addEventListener("click", enviar, false);
+		document.datos_usuario.addEventListener("input", validar_tiempo_real, false); //Pone a la escucha el formulario y se ejecuta cuando se realiza un input(introducir informacion) en el formulario
+	}
+
+	function cambia_rango(argument) {
+		var salida= document.getElementById("rango");
+		var calculo=edad.value-30;
+
+		if (calculo<30) {
+			calculo=0;
+			edad.value=30;
+		}
+		salida.innerHTML=calculo+" a " + edad.value;
+
+
+	}
+
+	function validar(e) {
+		var elemento=e.target;
+		elemento.style.background="#FFDDDD";
+	}
+
+	function enviar() {
+		var correcto= document.datos_usuario.checkValidity();
+
+		if (correcto==true) {
+			document.datos_usuario.submit();
+		}
+	}
+	function validar_tiempo_real(e) {
+		var elemento=e.target;
+		if (elemento.validity.valid==true) {
+			elemento.style.background="#FFFFFF";
+		}
+		else{
+			elemento.style.background="#FFDDDD";
+		}
+	}
+
+window.addEventListener("load", comenzar, false);
+</script>
+<body>
+	<form name="datos_usuario" method="get">
+		<!-- <datalist id="informacion">
+			<option value="23423421" label="	telefono1">
+			<option value="53634564" label="	telefono2">
+			<option value="67576556" label="	telefono3">
+		</datalist>
+
+	Teléfono:&nbsp;<input type="tel" name="telefono" id="telefono" list="informacion"> -->
+	<table>
+		<tr>
+			<td>Usuario:</td>
+			<td><input pattern="[A-Za-z]{3}" name="usuario" id="usuario" maxlength="10" required></td>
+		</tr>
+		<tr>
+			<td>Email:</td>
+			<td><input type="email" name="miemail" id="miemail" required></td>
+		</tr>
+		<tr>
+			<td>Edad:</td>
+			<td><input type="range" name="miedad" id="miedad" min="0" max="120" step="30" value="30"></td>
+		</tr>
+		<tr>
+			<td><output id="rango">0 a 30</output></td>
+		</tr>
+		<tr>
+		<td><input type="submit" name="Enviar" id="Enviar" value="registrar"></td>
+		</tr>
+	</table>
+
+	</form>
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+@charset "utf-8";
+/* CSS Document */
+
+#cabeceraweb{
+	background-color: chocolate;
+}
+
+#navegacionPrincipal{
+	background-color: greenyellow;
+}
+#barraLateral{
+	background-color: coral;
+	float: left;
+	height: 450px;
+}
+#contenidoPrincipal{
+	background-color: darkolivegreen;
+	margin-left: 200px;
+	padding-left: 15px;
+	padding-top: 15px;
+}
+#piePrincipal{
+	background-color: cornflowerblue;
+	clear: both;
+	margin-top: 80px;
+}
+
+body{
+	background-color: gold;
+}
+li{
+	background-color: violet;
+	display: inline
+}

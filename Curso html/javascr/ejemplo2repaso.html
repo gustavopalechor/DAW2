@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ejemplos con javascript</title>
+	<script>
+
+		function comprobar(){
+			var nombre= document.getElementById("nombre");
+			nombre.value="Mentira";
+			// alert (nombre.value);
+			document.getElementById("comprobar").removeEventListener("click", comprobar, false);
+		}
+		function compro(){
+			document.getElementById("comprobar").addEventListener("click", comprobar, false);
+		}
+
+		window.addEventListener("load", compro, false);
+	</script>
+
+</head>
+<body>
+	<form id="formulario" action="">
+		¿Cómo te llamas?
+		<input type="text" name="nombre" id="nombre" />
+		<input type="button" name="boton" id="comprobar" value="comprobar" />
+
+
+
+	</form>
+
+</body>
+</html>

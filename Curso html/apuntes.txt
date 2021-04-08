@@ -1,0 +1,33 @@
+FORMULARIOS:
+<form> </form>
+
+atributos dentro de etiqueta form:
+	name, id, autocomplete(guarda la ultima informacion introducida en un formulario), novalidate
+
+atributos
+	-Type:
+		text
+		Email	valida de una vez si es de tipo email lo introducido por el usuario
+		search	construir casilla de busqueda en una web
+		url
+		tel:	No agrega ninguna validacion. Lo adapta segun el dispositivo
+		number: junto con min, max y step (Nos permite especificar los numeros que queremos que se introduzcan)(step podemos especificar so queremos guardar numeros de 5 en 5, de 2 en 2,etc
+			placeholder="(marca de agua para informar lo que se hay que introducir en el campo)")
+		range: Junto con max, min y step
+		date
+		week
+		month
+		time
+		datetime
+
+		placeholder
+		required	Al campo que se lo coloques lo vuelve requerido
+		multiple 	para enviar mas de un dato del campo
+		autofocus	enfocar el cursor en el campo que deseemos
+		pattern		Validaciones complejas
+		form		Construir un elemento del formulario fuera del formulario
+		datalist	Crea una lista con elementos que queramos que el usuario seleccione
+		API FORMS	Validaciones mas complejas
+			setCustomVali		Cambiar el estilo del mensaje de validacion
+
+1:30

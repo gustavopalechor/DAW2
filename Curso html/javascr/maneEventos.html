@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>evento false</title>
+	<script>
+		function losEventos(argument) {
+			var elemento1=document.getElementsByTagName("p")[0];
+			var elemento2= document.getElementsByTagName("img")[0];
+
+			elemento1.addEventListener("click", aviso2, true);
+			elemento2.addEventListener("click", aviso1, false);
+		}
+
+		function aviso1(argument) {
+			alert("Hola soy la imagen");
+		}
+
+		function aviso2(argument) {
+			// body...
+			alert("Hola soy el párrafo");
+		}
+
+		window.addEventListener("load", losEventos,false);
+
+	</script>
+</head>
+<body>
+
+	<p>
+		<img src="imagenes/1.jpg">
+	</p>
+</body>
+</html>

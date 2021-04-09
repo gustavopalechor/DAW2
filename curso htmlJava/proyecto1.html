@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+	table{
+		text-align: center;
+		background-color: #F96;
+		width: 25%;
+		margin: auto;
+		border: 2px #F30 dashed;
+	}
+
+	td{
+		padding: 15px;
+	}
+
+</style>
+<script>
+	function validar(argument) {
+		
+		document.datos_usuario.addEventListener("input", corregir, false);
+		document.datos_usuario.addEventListener("invalid", correcto, true);
+		document.getElementById("Enviar").addEventListener("click", envio, false);
+	}
+
+	function corregir(e){
+		var elemento=e.target;
+		if (elemento.validity.valid==true) {
+			elemento.style.background="#FFFFFF";
+
+		}
+		else{
+			elemento.style.background="#FFDDDD";
+		}
+
+
+	}
+
+	function correcto(e){
+
+		var elemento=e.target;
+		elemento.style.background="#FFDDDD";
+		
+	}
+
+	function envio(){
+		var nombre= document.getElementById("usuario");
+		var edad= document.getElementById("miedad");
+		var chekeo=document.getElementById("seleccion");
+		var correcto=document.datos_usuario.checkValidity();
+		if (correcto==true) {
+			document.datos_usuario.submit();
+		}
+		else if(nombre.validity.valueMissing==true){
+			alert("Rellenar el nombre de usuario");
+		}
+		else if (edad.validity.valueMissing==true) {
+			alert("Rellenar la edad de usuario");
+		}
+		else if(chekeo.checked==false){
+			alert ("Es obligatorio aceptar las condiciones de uso");
+		}
+
+
+
+	}
+	
+
+window.addEventListener("load", validar, false);
+</script>
+
+
+</head>
+<body>
+	<form name="datos_usuario" method="get">
+		
+	<table>
+		<tr>
+			<td>Usuario:</td>
+			<td><input pattern="[A-Za-z]{5}" name="usuario" id="usuario" maxlength="10" required></td>
+		</tr>
+		<tr>
+			<td>Email:</td>
+			<td><input type="email" name="miemail" id="miemail" required></td>
+		</tr>
+		<tr>
+			<td>Edad:</td>
+			<td><input type="number" name="miedad" id="miedad" min="0" max="100" required></td>
+		</tr>
+		
+		<tr>
+			<td> Condiciones de uso: </td>
+			<td> <input type="checkbox" name="seleccion" id="seleccion" required> </td>
+		</tr>
+
+		<tr>
+		<td><input type="submit" name="Enviar" id="Enviar" value="registrar"></td>
+		</tr>
+	</table>
+
+	</form>
+
+</body>
+</html>

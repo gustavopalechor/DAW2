@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Modificar dom</title>
+</head>
+<body>
+	<ol id="lista">
+		<li id="primero">lorem ipsum dolor sit amet.</li>
+		<li id="segundo">Asperiores ad, quam unde. Fuga</li>
+
+	</ol>
+
+	<script>
+		
+
+		/*--------- Modificar el contenido del elemento-----*/
+		//var primerElemento = document.getElementById('primero');
+		//primerElemento.innerHTML = "nuevo texto <i class='foo'>FalconMasters</i>"; 
+		//primerElemento.textContent="nuevo texto <i class='foo'>FalconMasters</i>"; 
+
+		/*------Reemplazar elementos------*/
+		/* Queremos reemplazar el primer elemento li, para ello utilizamos el metodo replaceChild de los elementos, el primer parametro a pasarle, es el elemento que queremos que aparezca y el segundo es el elemento que queremos eleminar*/
+		var elemento = document.createElement("li"),
+			contenido = document.createTextNode("Nuevo texto");
+
+		elemento.appendChild(contenido);
+
+		var padre = document.getElementsByTagName("li")[0].parentNode;
+		var referencia= document.getElementsByTagName('li')[0];
+
+		padre.replaceChild(elemento, referencia);
+
+		/*-----Eliminar nodos-----*/
+		var eliminar=document.getElementById('segundo');
+
+		padre.removeChild(eliminar);//idifentificamos el elemento a eliminar y con removeChild lo eliminamos
+
+
+
+
+	</script>
+
+</body>
+</html>

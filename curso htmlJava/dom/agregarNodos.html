@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<ol id="lista">
+		<li>Lorem ipsum dolor sit amet.</li>
+		<li>Asperiores ad, quam unde. fuga.</li>
+	</ol>
+
+	<script>
+		var elemento = document.createElement("li");
+		var contenido= document.createTextNode("nuevo texto");
+
+		elemento.appendChild(contenido);
+		var padre= document.getElementsByTagName('li')[0].parentNode;
+		var primerElemento= document.getElementsByTagName("li")[0];
+
+		padre.insertBefore(elemento, primerElemento);
+
+	</script>
+
+</body>
+</html>

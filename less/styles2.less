@@ -1,0 +1,16 @@
+
+.con{
+	
+	height:20px;
+	background-color: red;
+}
+.loop(@i) when(@i > 0){
+	.loop(@i - 1);
+	.con:nth-child(@{i}){	//con que elementos quiero trabajar
+	width: @i*10 + 0px;
+	
+	}
+}
+
+.loop(6);
+

@@ -1,0 +1,21 @@
+
+//las funciones
+
+.estilo(@alto, @ancho, @fondo){
+	height: @alto;
+	width: @ancho;
+	background-color: @fondo;
+}
+@import "less/mejoras.less";
+.con{
+	.estilo(300px, 300px, red);
+	.sub{
+		.estilo(200px, 200px, blue);
+		.subsub{
+		.estilo(100px, 100px, gray);
+		}
+	}
+}
+
+
+

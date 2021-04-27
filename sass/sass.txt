@@ -1,0 +1,51 @@
+SASS:
+
+extension = nombreProyecto.scss
+
+variables=
+	$nombreVariable: contenido;
+tipos de variables=
+	color, number, string, list, boolean, map(Es un tipo de "objeto")
+	Es decir $color1: red;	number1: 1; number2: 10px; (diferentes medidas)
+	$string: contenido;(con o sin comillas); $boolean: true o false; $list: 1px solid red;	$map:(primary: red, secondary: green, tertiary:blue);
+
+Anidacion=
+	.class{
+		color: red;
+		.div{
+			color:red;
+		}
+	}
+
+Mixin= Trozo de codigo reutilizable
+	para llamarlo utilizamos @include nombreMixin; y lo declaramos= @mixin nombre{}
+	se pueden pasar parametros
+
+	@mixin button($parametro){
+	display: inline-block;
+	text-decoration: none;
+	padding: .5em 1em;
+	color: $parametro
+	
+	//(con '&' es utilizar el selector padre es decir .button:hover)
+	&:hover{
+		background: red;
+		}
+	}
+
+	.button{
+	@include button(red);	//Tendria lo mismo que el mixin.
+	}
+
+Se pueden utilizar bucles como for:
+
+			desde 1 a 20
+	@for $i from 1 through 20{
+
+	.cols-#{$i}{	//seris cols-1, cols-2, etc tomando el valor indice del for $i
+	width: $i * 5%
+	}
+
+
+
+}
